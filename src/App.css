@@ -42,6 +42,10 @@
   border-radius: 10px;
 }
 
+.input-field:focus {
+  outline: none;
+}
+
 .input-add-icon-container {
   display: flex;
   align-items: center;
@@ -78,9 +82,11 @@
 
 .add-icon {
   color: #e4b014;
+  cursor: pointer;
 }
 
 .trash-icon {
   margin-right: 20px;
   color: grey;
+  cursor: pointer;
 }

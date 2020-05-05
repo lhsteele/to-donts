@@ -6,7 +6,7 @@ export default class List extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      list: ["Go to beach", "Watch a movie", "Tapas with friends", "Go on holiday"],
+      list: ["Picnic at the beach", "Go to see a movie", "Tapas with friends", "Go on holiday"],
       toDont: ''
     }
     this.COLORS = ["#fbb2d0", "#e4b014", "#91bdd0", "#f1613a"]
