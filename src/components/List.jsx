@@ -16,26 +16,24 @@ export default class List extends Component {
     this.setState({ toDont: ev.target.value })
   };
 
+  handleAddClick = prevState => {
+    const newToDont = this.state.toDont;
+    this.setState(prevState => ({
+      list: [...prevState.list, newToDont],
+      toDont: ''
+    }));
+  };
+
   handleEnterKeyPress = ev => {
     if (ev && ev.keyCode === 13) {
-      const newToDont = this.state.toDont;
-      const currentList = this.state.list;
-      currentList.push(newToDont);
-      this.setState({ list: currentList, toDont: '' })
+      this.handleAddClick()
     }
-  }
-
-  handleAddClick = () => {
-    const newToDont = this.state.toDont;
-    const currentList = this.state.list;
-    currentList.push(newToDont);
-    this.setState({ list: currentList, toDont: '' })
-  }
+  };
 
   removeListItem = name => {
-    const currentList = this.state.list;
-    const newList = currentList.filter(item => item !== name)
-    this.setState({ list: newList })
+    this.setState(prevState => ({
+      list: prevState.list.filter(item => item !== name)
+    }));
   };
 
   renderList = () => {
